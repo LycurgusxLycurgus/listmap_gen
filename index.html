@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ListMap App</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- D3.js Library -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Side: Graph Visualization -->
+        <div class="graph-container">
+            <svg id="graph"></svg>
+        </div>
+
+        <!-- Right Side: Input Forms -->
+        <div class="form-container">
+            <h2>Select a Topic</h2>
+            <input type="text" id="topic-input" placeholder="Enter central topic" />
+            <button id="set-topic">Set Topic</button>
+
+            <div id="categories" class="hidden">
+                <h3>Add Categories</h3>
+                <form id="category-form">
+                    <label for="category-select">Select Category:</label>
+                    <select id="category-select" required>
+                        <option value="" disabled selected>Select Category</option>
+                        <option value="Genre">Genre</option>
+                        <option value="Species">Species</option>
+                        <option value="Genos">Genos</option>
+                        <option value="Telos">Telos</option>
+                    </select>
+
+                    <label for="node-name">Node Name:</label>
+                    <input type="text" id="node-name" placeholder="Enter node name" required />
+
+                    <label for="node-description">Description:</label>
+                    <textarea id="node-description" placeholder="Enter description" required></textarea>
+
+                    <button type="submit">Add Node</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tooltip for Node Details -->
+    <div class="tooltip hidden"></div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
